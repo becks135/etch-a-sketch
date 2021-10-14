@@ -21,7 +21,9 @@ createGrid(gridWidth);
 let gridSquare = document.querySelectorAll(".grid-element");
 gridSquare.forEach((div) => {
     div.addEventListener("mouseenter", function(e){
-        this.classList.add("grid-item-hover");
+        //this.classList.add("grid-item-hover");
+        let gridBGColor = getComputedStyle(document.querySelector(":root")).getPropertyValue("--line-color");
+        this.style.setProperty("background-color",gridBGColor);
     });
 });
 
