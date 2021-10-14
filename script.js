@@ -1,5 +1,5 @@
 //add 16x16 divs to page
-let gridWidth = 16;
+let gridWidth = 75;
 let container = document.querySelector(".container");
 
 
@@ -13,7 +13,7 @@ function createGrid(width){
 }
 
 function clearGrid(){
-    
+
 }
 
 createGrid(gridWidth);
@@ -24,3 +24,8 @@ gridSquare.forEach((div) => {
         this.classList.add("grid-item-hover");
     });
 });
+/*
+let lineColor = document.querySelector("#line-colour");
+lineColor.addEventListener('change',()=>{
+    document.querySelector(".grid-item-hover").style
+}*/

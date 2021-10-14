@@ -1,9 +1,25 @@
+:root{
+--line-color: rgb(124, 32, 32);
+}
+.heading{
+    text-align: center;
+}
+
+.sketch-pad{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
+}
 .container{
+    width: 750px;
+    height:750px;
     display: grid;
-    grid-template-columns: repeat(16, 10px);
-    grid-template-rows: repeat(16, 10px);
+    grid-template-columns: repeat(75, 10px);
+    grid-template-rows: repeat(75, 10px);
+    box-shadow: 3px 1px 2px lightgray;
 }
 
 .grid-item-hover{
-    background-color: blueviolet;
+    background-color: var(--line-color);
 }
