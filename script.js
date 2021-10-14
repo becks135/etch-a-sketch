@@ -24,8 +24,9 @@ gridSquare.forEach((div) => {
         this.classList.add("grid-item-hover");
     });
 });
-/*
+
 let lineColor = document.querySelector("#line-colour");
 lineColor.addEventListener('change',()=>{
-    document.querySelector(".grid-item-hover").style
-}*/
+    console.log(lineColor);
+    document.querySelector(":root").style.setProperty("--line-color",lineColor.value);
+});
