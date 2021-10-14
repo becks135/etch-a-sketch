@@ -1,5 +1,7 @@
 :root{
---line-color: rgb(124, 32, 32);
+--line-color:black;
+background-color: lightsteelblue;
+font-family: 'Montserrat';
 }
 .heading{
     text-align: center;
@@ -7,11 +9,13 @@
 
 .sketch-pad{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;;
     gap:10px;
 }
 .container{
+    background-color: white;
     width: 750px;
     height:750px;
     display: grid;
@@ -19,6 +23,13 @@
     grid-template-rows: repeat(75, 10px);
     box-shadow: 3px 1px 2px lightgray;
 }
+
+.controls{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+gap:50px;}
+
 
 .grid-item-hover{
     background-color: var(--line-color);
