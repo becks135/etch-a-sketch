@@ -53,7 +53,11 @@ document.querySelector(".color-selection").addEventListener('click', function (e
 });
 
 document.querySelector(".clear").addEventListener('click', function (e) {
+    clearGrid();
+});
+
+function clearGrid(){
     gridSquare.forEach((div)=>{
         div.style.setProperty("background-color", "white");
     });
-});
+}
