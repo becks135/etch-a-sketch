@@ -1,4 +1,4 @@
-//add 16x16 divs to page
+
 let gridWidth = 75;
 let container = document.querySelector(".container");
 
@@ -12,32 +12,13 @@ function createGrid(width) {
     }
 }
 
-function clearGrid() {
 
-}
-
-createGrid(gridWidth);
 let pointerType = "pencil";
-let gridSquare = document.querySelectorAll(".grid-element");
 
-gridSquare.forEach((div) => {
-    div.addEventListener("mouseenter", function (e) {
-        //this.classList.add("grid-item-hover");
-        if (pointerType === "pencil") {
-            let gridBGColor = getComputedStyle(document.querySelector(":root")).getPropertyValue("--line-color");
-            this.style.setProperty("background-color", gridBGColor);
-        }
-    });
-    div.addEventListener("click", function (e) {
-        if (pointerType === "eraser") {
-            this.style.setProperty("background-color", "white");
-        }
-    });
-});
+resetGrid();
 
 let lineColor = document.querySelector("#line-colour");
 lineColor.addEventListener('change', () => {
-
     document.querySelector(":root").style.setProperty("--line-color", lineColor.value);
 });
 
@@ -53,11 +34,34 @@ document.querySelector(".color-selection").addEventListener('click', function (e
 });
 
 document.querySelector(".clear").addEventListener('click', function (e) {
-    clearGrid();
+    resetGrid();
 });
 
-function clearGrid(){
-    gridSquare.forEach((div)=>{
-        div.style.setProperty("background-color", "white");
+function resetGrid(){
+    while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+    }
+    createGrid(gridWidth);
+    let gridSquare = document.querySelectorAll(".grid-element");
+    gridSquare.forEach((div) => {
+        div.addEventListener("mouseenter", function (e) {
+            if (pointerType === "pencil") {
+                let gridBGColor = getComputedStyle(document.querySelector(":root")).getPropertyValue("--line-color");
+                this.style.setProperty("background-color", gridBGColor);
+            }
+        });
+        div.addEventListener("click", function (e) {
+            if (pointerType === "eraser") {
+                this.style.setProperty("background-color", "white");
+            }
+        });
     });
 }
+
+document.querySelector(".grid-size").addEventListener('input', function(e){
+    gridWidth=document.querySelector(".grid-size").value;
+    let cellWidth = getComputedStyle(document.querySelector(":root")).getPropertyValue("--canvas-size")/gridWidth;
+    container.style.setProperty("grid-template-columns",`repeat(${gridWidth}, ${cellWidth}px)`);
+    container.style.setProperty("grid-template-rows",`repeat(${gridWidth}, ${cellWidth}px)`);
+    resetGrid();
+})

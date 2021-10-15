@@ -1,5 +1,6 @@
 :root{
 --line-color:black;
+--canvas-size:750;
 background-color: lightsteelblue;
 font-family: 'Montserrat';
 }
