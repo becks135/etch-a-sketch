@@ -1,5 +1,5 @@
 //add 16x16 divs to page
-let gridWidth = 75;
+let gridWidth = 25;
 let container = document.querySelector(".container");
 
 
@@ -36,5 +36,17 @@ gridSquare.forEach((div) => {
 
 let lineColor = document.querySelector("#line-colour");
 lineColor.addEventListener('change', () => {
+   
     document.querySelector(":root").style.setProperty("--line-color", lineColor.value);
+});
+
+let eraser = document.querySelector(".eraser");
+eraser.addEventListener('click', function(e){
+    pointerType="eraser";
+    document.documentElement.style.cursor = "url('clipart42077192.png'), default";
+});
+
+document.querySelector(".color-selection").addEventListener('click',function(e){
+    document.documentElement.style.cursor = "default";
+    pointerType="pencil";
 });

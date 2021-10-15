@@ -19,8 +19,8 @@ font-family: 'Montserrat';
     width: 750px;
     height:750px;
     display: grid;
-    grid-template-columns: repeat(75, 10px);
-    grid-template-rows: repeat(75, 10px);
+    grid-template-columns: repeat(25, 30px);
+    grid-template-rows: repeat(25, 30px);
     box-shadow: 3px 1px 2px lightgray;
 }
 
@@ -34,3 +34,17 @@ gap:50px;}
 .grid-item-hover{
     background-color: var(--line-color);
 }
+
+button {
+    height: 35px;
+    min-width: 80px;
+}
+
+#line-colour{
+border-style: none;
+}
+
+/*body{
+    cursor: url('clipart42077192.png'), pointer;
+  
+}*/
