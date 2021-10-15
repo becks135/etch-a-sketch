@@ -1,5 +1,5 @@
 //add 16x16 divs to page
-let gridWidth = 25;
+let gridWidth = 75;
 let container = document.querySelector(".container");
 
 
@@ -44,7 +44,7 @@ lineColor.addEventListener('change', () => {
 let eraser = document.querySelector(".eraser");
 eraser.addEventListener('click', function (e) {
     pointerType = "eraser";
-    document.documentElement.style.cursor = "url('clipart42077192.png'), default";
+    document.documentElement.style.cursor = "url('clipart42077192.png') 0 15, default";
 });
 
 document.querySelector(".color-selection").addEventListener('click', function (e) {
